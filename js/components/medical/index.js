@@ -10,7 +10,6 @@ import { replaceRoute } from '../../actions/route';
 import { setIndex } from '../../actions/list';
 import myTheme from '../../themes/base-theme';
 import styles from './styles';
-var { Icon, } = require('react-native-icons');
 
 const markers = [
   {

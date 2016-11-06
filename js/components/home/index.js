@@ -70,9 +70,6 @@ class Home extends Component {
                 Community services
               </Button>
             </View>
-            <Icon name="facebook" style={styles.icon}>
-              <Text style={styles.text}>Login with Facebook</Text>
-            </Icon>
           </Grid>
         </Content>
       </Container>

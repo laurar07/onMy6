@@ -30,8 +30,20 @@ module.exports = StyleSheet.create({
   input: {
     marginBottom: 20,
   },
-  btn: {
+  newuser: {
     marginTop: 20,
-    alignSelf: 'center',
+    flexDirection: 'row',
+  },
+  newusertxt: {
+    width: 100,
+    fontSize: 20,
+  },
+  newuserbtn: {
+    width: 250,
+  },
+  loginbtn: {
+    marginTop: 20,
+    width: 350,
+    alignItems: 'center',
   },
 });

@@ -9,6 +9,7 @@ import { popRoute } from './actions/route';
 
 import Login from './components/login/';
 import Home from './components/home/';
+import Medical from './components/medical/';
 import BlankPage from './components/blankPage';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
@@ -95,6 +96,8 @@ class AppNavigator extends Component {
         return <Login navigator={navigator} />;
       case 'home':
         return <Home navigator={navigator} />;
+      case 'medical':
+        return <Medical navigator={navigator} />;
       case 'blankPage':
         return <BlankPage navigator={navigator} />;
       default :

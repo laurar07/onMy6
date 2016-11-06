@@ -1,12 +1,11 @@
 
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
-import { Grid, Row } from 'react-native-easy-grid';
+import { Container, Header, Title, Content, Button, Icon, View, Text } from 'native-base';
+import { Grid } from 'react-native-easy-grid';
 
-import { openDrawer, closeDrawer } from '../../actions/drawer';
-import { replaceRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
+import { openDrawer } from '../../actions/drawer';
+import { replaceRoute } from '../../actions/route';
 import { setIndex } from '../../actions/list';
 import myTheme from '../../themes/base-theme';
 import styles from './styles';
@@ -15,13 +14,10 @@ class Home extends Component {
 
   static propTypes = {
     openDrawer: React.PropTypes.func,
-    closeDrawer: React.PropTypes.func,
     replaceRoute: React.PropTypes.func,
-    replaceOrPushRoute: React.PropTypes.func,
     pushNewRoute: React.PropTypes.func,
     setIndex: React.PropTypes.func,
     name: React.PropTypes.string,
-    list: React.PropTypes.arrayOf(React.PropTypes.string),
   }
 
   replaceRoute(route) {
@@ -49,17 +45,34 @@ class Home extends Component {
         </Header>
 
         <Content>
-          <Grid style={styles.mt}>
-            {this.props.list.map((item, i) =>
-              <Row key={i}>
-                <TouchableOpacity
-                  style={styles.row}
-                  onPress={() => this.pushNewRoute('blankPage', i)}
-                >
-                  <Text style={styles.text}>{item}</Text>
-                </TouchableOpacity>
-              </Row>
-            )}
+          <Grid style={styles.list}>
+            <View style={styles.pair}>
+              <Button style={styles.item} onPress={() => this.replaceRoute('medical')}>
+                Medical
+              </Button>
+              <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
+                Public safety
+              </Button>
+            </View>
+            <View style={styles.pair}>
+              <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
+                Transportation
+              </Button>
+              <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
+                Restaurants
+              </Button>
+            </View>
+            <View style={styles.pair}>
+              <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
+                Financial services
+              </Button>
+              <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
+                Community services
+              </Button>
+            </View>
+            <Icon name="facebook" style={styles.icon}>
+              <Text style={styles.text}>Login with Facebook</Text>
+            </Icon>
           </Grid>
         </Content>
       </Container>
@@ -71,7 +84,6 @@ function bindAction(dispatch) {
   return {
     openDrawer: () => dispatch(openDrawer()),
     replaceRoute: route => dispatch(replaceRoute(route)),
-    pushNewRoute: route => dispatch(pushNewRoute(route)),
     setIndex: index => dispatch(setIndex(index)),
   };
 }

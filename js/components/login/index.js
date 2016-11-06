@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { Container, Content, InputGroup, Input, Button, Icon, View } from 'native-base';
 
@@ -51,9 +51,17 @@ class Login extends Component {
                     secureTextEntry
                   />
                 </InputGroup>
-                <Button style={styles.btn} onPress={() => this.replaceRoute('home')}>
+                <Button style={styles.loginbtn} onPress={() => this.replaceRoute('home')}>
                   Login
                 </Button>
+                <View style={styles.newuser}>
+                  <Text style={styles.newusertxt}>
+                    New user?
+                  </Text>
+                  <Button style={styles.newuserbtn} onPress={() => this.replaceRoute('home')}>
+                    Create an account
+                  </Button>
+                </View>
               </View>
             </Image>
           </Content>

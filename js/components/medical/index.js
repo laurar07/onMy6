@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button, Icon, View, Image } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, View } from 'native-base';
 import { Grid } from 'react-native-easy-grid';
-import { MapView } from 'react-native';
+import { MapView, Image } from 'react-native';
 
 import { openDrawer } from '../../actions/drawer';
 import { replaceRoute } from '../../actions/route';
@@ -13,6 +13,7 @@ import styles from './styles';
 
 const pins = require('../../../images/gps32.png');
 const topbar = require('../../../images/topbar.jpg');
+const bottombar = require('../../../images/bottombarmap.png');
 
 const markers = [
   {
@@ -87,6 +88,8 @@ class Medical extends Component {
   render() {
     return (
       <Container theme={myTheme} style={styles.container}>
+        <Image source={topbar} style={styles.topbar}>
+        </Image>
         <Header>
           <Button transparent onPress={() => this.replaceRoute('login')}>
             <Icon name="ios-power" />
@@ -102,7 +105,7 @@ class Medical extends Component {
           <MapView
             style={{ height: 550, width: 400, margin: 0 }}
             region={{
-              latitude: 47.661,
+              latitude: 47.650,
               longitude: -122.335,
               latitudeDelta: 0.105,
               longitudeDelta: 0.105,
@@ -111,6 +114,8 @@ class Medical extends Component {
             annotations={markers}
           />
         </Content>
+        <Image source={bottombar} style={styles.bottombar}>
+        </Image>
       </Container>
     );
   }

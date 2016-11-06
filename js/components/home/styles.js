@@ -11,6 +11,10 @@ module.exports = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
+  bottombar: {
+    width: 380,
+    resizeMode: 'cover',
+  },
   text: {
     fontSize: 20,
     marginBottom: 15,

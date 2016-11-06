@@ -8,7 +8,12 @@ module.exports = StyleSheet.create({
     backgroundColor: '#FBFAFA',
   },
   topbar: {
-    width: 350,
+    width: 380,
+    resizeMode: 'cover',
+  },
+  bottombar: {
+    width: 380,
+    resizeMode: 'cover',
   },
   row: {
     flex: 1,

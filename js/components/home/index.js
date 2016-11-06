@@ -3,12 +3,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Header, Title, Content, Button, Icon, View, Text } from 'native-base';
 import { Grid } from 'react-native-easy-grid';
+import { Image } from 'react-native';
 
 import { openDrawer } from '../../actions/drawer';
 import { replaceRoute } from '../../actions/route';
 import { setIndex } from '../../actions/list';
 import myTheme from '../../themes/base-theme';
 import styles from './styles';
+
+const bottombar = require('../../../images/bottombarmap.png');
 
 class Home extends Component {
 
@@ -72,6 +75,8 @@ class Home extends Component {
             </View>
           </Grid>
         </Content>
+        <Image source={bottombar} style={styles.bottombar}>
+        </Image>
       </Container>
     );
   }

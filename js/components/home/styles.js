@@ -37,9 +37,17 @@ module.exports = StyleSheet.create({
     alignSelf: 'stretch',
   },
   item: {
-    backgroundColor: '#CCC',
+    backgroundColor: '#6696c8',
     margin: 10,
     width: 150,
     height: 150,
+    padding: 10,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    alignSelf: 'center',
   },
 });

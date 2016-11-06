@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Header, Title, Content, Button, Icon, View, Text } from 'native-base';
 import { Grid } from 'react-native-easy-grid';
+import { Image } from 'react-native';
 
 import { openDrawer } from '../../actions/drawer';
 import { replaceRoute } from '../../actions/route';
@@ -34,7 +35,7 @@ class Home extends Component {
       <Container theme={myTheme} style={styles.container}>
         <Header>
           <Button transparent onPress={() => this.replaceRoute('login')}>
-            <Icon name="ios-power" />
+            <Icon name='ios-log-out' />
           </Button>
 
           <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
@@ -48,26 +49,32 @@ class Home extends Component {
           <Grid style={styles.list}>
             <View style={styles.pair}>
               <Button style={styles.item} onPress={() => this.replaceRoute('medical')}>
-                Medical
+                <Image style={styles.image} source={require('../../../images/sign.png')} />
+                {"\n"}Medical
               </Button>
               <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
-                Public safety
-              </Button>
-            </View>
-            <View style={styles.pair}>
-              <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
-                Transportation
-              </Button>
-              <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
-                Restaurants
+                <Image style={styles.image} source={require('../../../images/police-badge.png')} />
+                {"\n"}Public safety
               </Button>
             </View>
             <View style={styles.pair}>
               <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
-                Financial services
+                <Image style={styles.image} source={require('../../../images/worldwide.png')} />
+                {"\n"}Transportation
               </Button>
               <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
-                Community services
+                <Image style={styles.image} source={require('../../../images/table.png')} />
+                {"\n"}Restaurants
+              </Button>
+            </View>
+            <View style={styles.pair}>
+              <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
+                <Image style={styles.image} source={require('../../../images/dollar-symbol.png')} />
+                {"\n"}Financial services
+              </Button>
+              <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
+                <Image style={styles.image} source={require('../../../images/charity.png')} />
+                {"\n"}Community services
               </Button>
             </View>
           </Grid>

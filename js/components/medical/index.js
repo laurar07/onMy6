@@ -74,7 +74,7 @@ class Medical extends Component {
       <Container theme={myTheme} style={styles.container}>
         <Header>
           <Button transparent onPress={() => this.replaceRoute('login')}>
-            <Icon name="ios-power" />
+            <Icon name="ios-log-out" />
           </Button>
 
           <Title>{(this.props.name) ? this.props.name : 'Medical services'}</Title>

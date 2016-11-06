@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button, Icon, View } from 'native-base';
+import { Container, Header, Title, Content, Icon, Button, View } from 'native-base';
 import { Grid } from 'react-native-easy-grid';
 import { MapView, Image } from 'react-native';
 
@@ -91,8 +91,8 @@ class Medical extends Component {
         <Image source={topbar} style={styles.topbar}>
         </Image>
         <Header>
-          <Button transparent onPress={() => this.replaceRoute('login')}>
-            <Icon name="ios-power" />
+          <Button transparent onPress={() => this.replaceRoute('medical')}>
+            <Icon name="ios-locate" />
           </Button>
 
           <Title>{(this.props.name) ? this.props.name : 'Medical services'}</Title>

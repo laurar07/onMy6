@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Button, Icon, View } from 'native-base';
+import { Container, Header, Title, Content, Button, Icon, View, Image } from 'native-base';
 import { Grid } from 'react-native-easy-grid';
 import { MapView } from 'react-native';
 
@@ -11,42 +11,57 @@ import { setIndex } from '../../actions/list';
 import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
+const pins = require('../../../images/gps32.png');
+const topbar = require('../../../images/topbar.jpg');
+
 const markers = [
   {
     latitude: 47.6499817,
     longitude: -122.3506553,
     title: 'Zoom Care Fremont',
-    subtitle: 'Zoom Care Fremont',
+    subtitle: '624 N 34th St, Seattle, WA 98103',
+    image: pins,
+    animateDrop: true,
   },
   {
     latitude: 47.6506935,
     longitude: -122.3091341,
     title: 'UW Medical Center',
-    subtitle: 'UW Medical Center',
+    subtitle: '1959 NE Pacific St, Seattle, WA 98195',
+    image: pins,
+    animateDrop: true,
   },
   {
     latitude: 47.6616077,
     longitude: -122.3354941,
     title: 'Bartell Drugs',
-    subtitle: 'Bartell Drugs',
+    subtitle: '1820 N 45th St, Seattle, WA 98103',
+    image: pins,
+    animateDrop: true,
   },
   {
     latitude: 47.6692259,
     longitude: -122.3812515,
     title: 'Neighborcare Health',
-    subtitle: 'Neighborcare Health',
+    subtitle: '1753 NW 56th St #200, Seattle, WA 98107',
+    image: pins,
+    animateDrop: true,
   },
   {
     latitude: 47.614588,
     longitude: -122.342159,
     title: 'King County Public Health Downtown Clinic',
-    subtitle: 'King County Public Health Downtown Clinic',
+    subtitle: '2124 4th Ave, Seattle, WA 98121',
+    image: pins,
+    animateDrop: true,
   },
   {
     latitude: 47.668368,
     longitude: -122.380854,
     title: 'Swedish OB/GYN Specialists',
-    subtitle: 'Swedish OB/GYN Specialists',
+    subtitle: '5350 Tallman Ave. NW, Seattle WA 98107',
+    image: pins,
+    animateDrop: true,
   },
 ];
 
@@ -83,15 +98,14 @@ class Medical extends Component {
             <Icon name="ios-menu" />
           </Button>
         </Header>
-
         <Content>
           <MapView
             style={{ height: 550, width: 400, margin: 0 }}
             region={{
-              latitude: 47.66160,
+              latitude: 47.661,
               longitude: -122.335,
-              latitudeDelta: 0.1,
-              longitudeDelta: 0.1,
+              latitudeDelta: 0.105,
+              longitudeDelta: 0.105,
             }}
             showsUserLocation={true}
             annotations={markers}

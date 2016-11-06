@@ -7,6 +7,9 @@ module.exports = StyleSheet.create({
   container: {
     backgroundColor: '#FBFAFA',
   },
+  topbar: {
+    width: 350,
+  },
   row: {
     flex: 1,
     alignItems: 'center',

@@ -76,7 +76,7 @@ class Home extends Component {
               </Button>
               <Button style={styles.item} onPress={() => this.replaceRoute('home')}>
                 <Image style={styles.image} source={require('../../../images/charity.png')} />
-                {"\n"}Community services
+                  {"\n"}Community services
               </Button>
             </View>
           </Grid>

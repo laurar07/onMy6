@@ -53,5 +53,6 @@ module.exports = StyleSheet.create({
   },
   image: {
     alignSelf: 'center',
+    resizeMode: 'cover',
   },
 });

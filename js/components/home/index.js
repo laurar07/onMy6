@@ -34,8 +34,8 @@ class Home extends Component {
     return (
       <Container theme={myTheme} style={styles.container}>
         <Header>
-          <Button transparent onPress={() => this.replaceRoute('login')}>
-            <Icon name='ios-log-out' />
+          <Button transparent onPress={() => this.replaceRoute('medical')}>
+            <Icon name='ios-locate' />
           </Button>
 
           <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
